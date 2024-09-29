@@ -9,6 +9,10 @@ public class UserNotFoundExceptionMapper implements ExceptionMapper<UserNotFound
     @Override
     public Response toResponse(UserNotFoundException exception) {
         //return Response.status(Response.Status.NOT_FOUND.getStatusCode(), reasonPhrase: "User not found!").build();
-        return Response.status(Response.Status.NOT_FOUND.getStatusCode()).build();
+        //return Response.status(Response.Status.NOT_FOUND.getStatusCode()).build();
+        return Response.status(Response.Status.NOT_FOUND)
+                .entity("User not found!")
+                .build();
+
     }
 }
